@@ -8,9 +8,9 @@ st.set_page_config(page_title="GigFlow MVP", layout="wide")
 
 # ------------------ MOCK DATABASE ------------------
 artists = pd.DataFrame({
-    "Name": ["DJ Alpha", "DJ Blaze", "Night Vibes", "Rockers Band", "Jazz Crew"],
-    "Type": ["DJ", "DJ", "DJ", "Band", "Band"],
-    "Genre": ["EDM", "Techno", "Bollywood", "Rock", "Jazz"],
+    "Name": ["Shiv Band", "Sagar Waliya", "Bismil", "Unwind Voices", "Roohine Band"],
+    "Type": ["Band"],
+    "Genre": ["Bollywood", "Rock", "Sufi"],
     "Cost": [20000, 30000, 25000, 50000, 45000],
     "City": ["Nagpur", "Nagpur", "Pune", "Mumbai", "Nagpur"],
     "Rating": [4.5, 4.8, 4.2, 4.7, 4.3],
