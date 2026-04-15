@@ -48,26 +48,43 @@ if page == "Home":
 elif page == "Artist Profiles":
     st.title("🎧 Artist Profiles")
 
-    for i, row in artists.iterrows():
-        with st.container():
-            col1, col2 = st.columns([1, 2])
-            with col1:
-                st.image(row["Image"], use_container_width=True)
-            with col2:
-                st.subheader(row["Name"])
-                st.write(f"🎵 {row['Genre']} | {row['Type']}")
-                st.write(f"📍 {row['City']}")
-                st.write(f"⭐ Rating: {row['Rating']}")
-                st.write(f"💰 Cost: ₹{row['Cost']}")
-                st.write(f"📅 Available: {row['Available Dates']}")
+    selected_artist = st.selectbox("Select Artist", artists['Name'])
+    artist = artists[artists['Name'] == selected_artist].iloc[0]
 
-                if st.button(f"Book {row['Name']}", key=i):
-                    bookings.append({
-                        "Artist": row['Name'],
-                        "Cost": row['Cost'],
-                        "Date": row['Available Dates']
-                    })
-                    st.success("Booking Request Sent!")
+    col1, col2 = st.columns([1, 2])
+    with col1:
+        st.image(artist["Image"], use_container_width=True)
+    with col2:
+        st.subheader(artist["Name"])
+        st.write(f"🎵 {artist['Genre']} | {artist['Type']}")
+        st.write(f"📍 {artist['City']}")
+        st.write(f"⭐ Rating: {artist['Rating']}")
+        st.write(f"💰 Cost: ₹{artist['Cost']}")
+        st.write(f"📅 Available: {artist['Available Dates']}")
+
+        if st.button(f"Book {artist['Name']}"):
+            bookings.append({
+                "Artist": artist['Name'],
+                "Cost": artist['Cost'],
+                "Date": artist['Available Dates']
+            })
+            st.success("Booking Request Sent!")
+
+    st.markdown("---")
+
+    # ------------------ PORTFOLIO SECTION ------------------
+    st.subheader("🎬 Artist Portfolio (Reels Style)")
+
+    video_urls = [
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+        "https://www.youtube.com/watch?v=l482T0yNkeo"
+    ]
+
+    cols = st.columns(3)
+    for i, video in enumerate(video_urls):
+        with cols[i % 3]:
+            st.video(video)
 
 # ------------------ SEARCH & FILTER ------------------
 elif page == "Search & Filter":
