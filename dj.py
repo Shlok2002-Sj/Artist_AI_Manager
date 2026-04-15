@@ -11,7 +11,7 @@ dj_data = pd.DataFrame({
     "Cost": [20000, 30000, 25000],
     "Available Dates": ["2026-04-20", "2026-04-22", "2026-04-25"],
     "Image": [
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
+        "https://images.search.yahoo.com/search/images;_ylt=AwrgxTSmNt9pmAIAQXVXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3BpdnM-?p=shivam+joshi&fr2=piv-web&type=E210US885G0&fr=mcafee&imgurl=https%3A%2F%2Fwww.indianspeakerbureau.com%2Fimg%2F1626169842_4ffcc45e-0474-41f5-8939-8147099135a4.jpeg",
         "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2",
         "https://images.unsplash.com/photo-1497032205916-ac775f0649ae"
     ]
