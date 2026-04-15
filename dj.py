@@ -86,6 +86,26 @@ elif page == "Artist Profiles":
         with cols[i % 3]:
             st.video(video)
 
+    st.markdown("---")
+
+    # ------------------ ARTIST CALENDAR ------------------
+    st.subheader("📅 Check Availability (Artist Specific)")
+
+    artist_date = st.date_input("Select Date for Booking")
+    available_date = pd.to_datetime(artist['Available Dates']).date()
+
+    if artist_date == available_date:
+        st.success(f"✅ {artist['Name']} is AVAILABLE on {artist_date}")
+        if st.button("Confirm Booking"):
+            bookings.append({
+                "Artist": artist['Name'],
+                "Cost": artist['Cost'],
+                "Date": str(artist_date)
+            })
+            st.success("🎉 Booking Confirmed!")
+    else:
+        st.error(f"❌ Not Available on {artist_date}")
+
 # ------------------ SEARCH & FILTER ------------------
 elif page == "Search & Filter":
     st.title("🔍 Find Your Artist")
