@@ -8,21 +8,20 @@ st.set_page_config(page_title="GigFlow MVP", layout="wide")
 
 # ------------------ MOCK DATABASE ------------------
 artists = pd.DataFrame({
-    "Name": ["Shiv Band", "Sagar Waliya", "Bismil", "Unwind Voices", "Roohine Band"],
-    "Type": ["Band"],
-    "Genre": ["Bollywood", "Rock", "Sufi"],
-    "Cost": [20000, 30000, 25000, 50000, 45000],
-    "City": ["Nagpur", "Nagpur", "Pune", "Mumbai", "Nagpur"],
-    "Rating": [4.5, 4.8, 4.2, 4.7, 4.3],
+    "Name": ["Shiv Band", "Unwind Voices", "Sagar Waliya", "Roohine"],
+    "Type": ["Band", "Band", "Band", "Band"],
+    "Genre": ["Rock", "Bollywood", "Sufi", "Sufi"],
+    "Cost": [50000, 40000, 45000, 42000],
+    "City": ["Nagpur", "Nagpur", "Nagpur", "Nagpur"],
+    "Rating": [4.7, 4.5, 4.6, 4.4],
     "Available Dates": [
-        "2026-04-20", "2026-04-22", "2026-04-25", "2026-04-21", "2026-04-23"
+        "2026-04-20", "2026-04-22", "2026-04-25", "2026-04-23"
     ],
     "Image": [
-        "https://images.unsplash.com/photo-1511379938547-c1f69419868d",
-        "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2",
-        "https://images.unsplash.com/photo-1497032205916-ac775f0649ae",
         "https://images.unsplash.com/photo-1507878866276-a947ef722fee",
-        "https://images.unsplash.com/photo-1464375117522-1311dd6b1f76"
+        "https://images.unsplash.com/photo-1464375117522-1311dd6b1f76",
+        "https://images.unsplash.com/photo-1497032205916-ac775f0649ae",
+        "https://images.unsplash.com/photo-1511379938547-c1f69419868d"
     ]
 })
 
